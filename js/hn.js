@@ -1285,13 +1285,15 @@ var HN = {
       others.toggle();
     },
 
-	setTopColor: function(){
-	  var topcolor = document.getElementById("header").firstChild.getAttribute("bgcolor");
-	  if(topcolor.toLowerCase() != '#ff6600')
-	  {
-		document.getElementById("header").style.setProperty("background-color", topcolor, "important");
-	  }
-	},
+    setTopColor: function() {
+      var firstChild = document.getElementById("hnmain").firstChild;
+      if (firstChild) {
+        var topcolor = firstChild.getAttribute("bgcolor");	
+        if (topcolor.toLowerCase() != '#f6f6ef') {
+          document.getElementById("header").style.setProperty("background-color", topcolor, "important");
+        }
+      }
+    },
 	
     setSearchInput: function(el, domain) {
       var text = "Search on " + domain;
