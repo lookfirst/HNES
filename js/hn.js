@@ -1286,12 +1286,9 @@ var HN = {
     },
 
     setTopColor: function() {
-      var firstChild = document.getElementById("hnmain").firstChild;
-      if (firstChild) {
-        var topcolor = firstChild.getAttribute("bgcolor");	
-        if (topcolor.toLowerCase() != '#f6f6ef') {
-          document.getElementById("header").style.setProperty("background-color", topcolor, "important");
-        }
+      var topcolor = document.getElementById("hnmain").getAttribute("bgcolor");	
+      if (topcolor.toLowerCase() != '#f6f6ef') {
+        document.getElementById("header").style.setProperty("background-color", topcolor, "important");
       }
     },
 	
