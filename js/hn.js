@@ -1322,7 +1322,9 @@ var HN = {
             l = 76, // New tab
             c = 67, // Comments in new tab
             b = 66, // Open comments and link in new tab
+            enterKey = 13,
             shiftKey = 16; // allow modifier
+            
         $(document).keydown(function(e){
           //Keyboard shortcuts disabled when search focused
           if (!HN.searchInputFocused && !e.ctrlKey) {
@@ -1330,9 +1332,9 @@ var HN = {
               HN.next_story();
             } else if (e.which == k || e.which == upArrow) {
               HN.previous_story();
-            } else if (e.which == l){
+            } else if (e.which == l || (e.metaKey && e.which == enterKey)){
               HN.open_story_in_new_tab();
-            } else if (e.which == o) {
+            } else if (e.which == o || e.which == enterKey) {
               HN.open_story_in_current_tab();
             } else if (e.which == p) {
               HN.open_comments_in_current_tab();
