@@ -1038,7 +1038,7 @@ var HN = {
           score.text(score.text().substring(0, score.text().indexOf(' ')));
         score.addClass("score").attr('title', 'Points');
 
-        if (comments.text() == "discuss")
+        if (comments.text() == "discuss" || /ago$/.test(comments.text()))
           comments = $("<a/>").html('0')
                               .attr('href', comments.attr('href'));
         else if (comments.text() == "comments")
@@ -1123,7 +1123,12 @@ var HN = {
 
       logout.detach();
       user_profile.detach();
-      var score = pagetop.text().match(/(\(.*\))/)[1];
+
+      var score_str = pagetop.text();
+      var regex = /\(([^)]+)\)/;
+      var matches = regex.exec(score_str);
+      var score = matches[1];
+
       var score_elem = $('<span/>').text('|')
                                    .append(
                                      $('<span/>').text(score)
