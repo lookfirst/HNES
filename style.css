@@ -31,7 +31,7 @@ body center table table {
 /*header color*/
 #header,
 .nav-drop-down {
-  background-color: #d74937 !important;
+  background-color: #d74937;
 }
 /*content color*/
 #content {
@@ -199,10 +199,6 @@ a.comments:hover {
   text-align: left;
   padding-top: 4px;
   padding-bottom: 4px;
-}
-/*highlight line*/
-.nav-drop-down a:hover {
-  background-color: #e75947 !important;
 }
 /*other main nav links*/
 #nav-others {
